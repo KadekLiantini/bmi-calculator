@@ -137,7 +137,6 @@ button.calculate {
   outline: none;
   border: none;
   transition: all 0.5s;
-  box-shadow: 3px 3px 5px grey;
 }
 button.calculate:hover {
   background: #366af6;

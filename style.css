@@ -486,11 +486,11 @@ ul > li::marker {
   }
 }
 
-@media (max-width: 374px) {
+/* @media (max-width: 374px) {
   .overweight {
     margin-top: 10px;
   }
-}
+} */
 
 @media screen and (max-width: 1245px) {
   #bmi-calc {

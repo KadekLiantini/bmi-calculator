@@ -1,0 +1,509 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  background: #fefefec0;
+}
+
+#bmi {
+  display: flex;
+  padding: 0 6% 6%;
+}
+
+#bmi-calc {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kiri {
+  display: block;
+  width: 50%;
+}
+
+.hero h1 {
+  text-align: center;
+}
+
+.hero img {
+  width: 20%;
+  margin: 0 auto;
+  display: block;
+}
+
+.box {
+  width: 500px;
+  text-align: center;
+}
+
+h1 {
+  color: rgb(0, 0, 0, 0.7);
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.input {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  border-style: solid;
+  border-color: #2058f2;
+}
+
+.input label {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 20px;
+}
+.input input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #2058f2;
+  width: 50%;
+  text-align: center;
+  font-size: 28px;
+  font-family: "Nunito", sans-serif;
+}
+
+.inputW {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px 0;
+  margin-bottom: 20px;
+  border-style: solid;
+  border-color: #2058f2;
+}
+
+.inputW label {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 20px;
+}
+.inputW input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #2058f2;
+  width: 50%;
+  text-align: center;
+  font-size: 28px;
+  font-family: "Nunito", sans-serif;
+}
+
+.inputH {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px 0;
+  margin-bottom: 20px;
+  border-style: solid;
+  border-color: #2058f2;
+}
+
+.inputH label {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 20px;
+}
+.inputH input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #2058f2;
+  width: 50%;
+  text-align: center;
+  font-size: 28px;
+  font-family: "Nunito", sans-serif;
+}
+
+button.calculate {
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  color: #fff;
+  background: #2058f2;
+  font-size: 16px;
+  border-radius: 7px;
+  padding: 12px 0;
+  width: 100%;
+  outline: none;
+  border: none;
+  transition: all 0.5s;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+}
+button.calculate:hover {
+  background: #366af6;
+}
+
+.result {
+  padding: 10px 20px;
+}
+.result p {
+  font-weight: 600;
+  font-size: 22px;
+  color: #000;
+  margin-bottom: 15px;
+}
+.result #result {
+  font-size: 36px;
+  font-weight: 900;
+  color: #2058f2;
+  background-color: #eaeaea;
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 55px;
+  margin-bottom: 25px;
+}
+#comment {
+  font-weight: 800;
+}
+
+#comment span {
+  color: #2058f2;
+  font-weight: 800;
+}
+
+.comment {
+  border: dashed 1px;
+  border-radius: 7px;
+  padding: 5px;
+  max-width: 100%;
+}
+
+.gender {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px 0;
+  margin-bottom: 20px;
+  border-style: solid;
+  border-color: #2058f2;
+}
+
+/* Style for Radio */
+.gender .container {
+  position: relative;
+  padding-left: 35px;
+  margin-top: 7px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.gender .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.gender .container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.gender .container input:checked ~ .checkmark {
+  background-color: #2058f2;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.gender .container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.gender .container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+/* END Style for Radio */
+
+.containerHW {
+  display: flex;
+  gap: 9px;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+/* ====================BUTTON DARK MODE */
+
+.mini-title {
+  display: block;
+  text-align: center;
+}
+
+.title h1 {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+body.dark {
+  background: #12121a;
+  h1,
+  h2,
+  .result p {
+    color: #2058f2;
+  }
+  label,
+  h5 {
+    color: white;
+  }
+  p,
+  small,
+  ul li {
+    color: white;
+  }
+  .input,
+  .inputW,
+  .inputH,
+  .gender,
+  input {
+    background: #30323e;
+    color: white;
+    box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+  }
+
+  #comment {
+    color: white;
+  }
+
+  #comment span {
+    color: #2058f2;
+  }
+}
+
+.btn-dark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  /* margin-bottom: 1rem; */
+  background-color: #2058f2;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  height: 26px;
+  width: 50px;
+  transform: scale(1.5);
+  box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+}
+
+.label .ball {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 22px;
+  width: 22px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(24px);
+}
+
+.fa-moon {
+  color: #ffc255;
+}
+
+.fa-sun {
+  color: #ffc255;
+}
+
+.range-container {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.range {
+  width: 100px;
+}
+
+.range h5 {
+  padding-top: 5px;
+  color: #2058f2;
+}
+
+.underweight {
+  border-top: 5px solid rgb(12, 137, 238);
+}
+
+.healthy {
+  border-top: 5px solid rgb(0, 137, 0);
+}
+
+.overweight {
+  border-top: 5px solid rgb(227, 212, 47);
+}
+
+.obese {
+  border-top: 5px solid rgb(255, 0, 0);
+}
+
+#container-result {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+::marker {
+  color: #2058f2;
+}
+
+ul > li::marker {
+  font-size: 1.5rem;
+}
+
+.category-list {
+  padding: 20px;
+}
+.ulang {
+  margin-top: 2rem;
+}
+
+.ulang a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #2058f2;
+}
+
+@media (max-width: 991px) {
+  .hero img {
+    width: 60%;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero img {
+    width: 80%;
+    padding-top: 1rem;
+  }
+
+  .box {
+    width: 100%;
+  }
+  .input label {
+    font-size: 18px; /* Atau ukuran yang sesuai */
+  }
+  .input input,
+  .inputH input,
+  .inputW input {
+    font-size: 18px; /* Atau ukuran yang sesuai */
+  }
+  .containerHW {
+    flex-direction: column;
+    /* align-items: stretch; */
+  }
+  .inputH,
+  .inputW {
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+  .title {
+    display: block;
+  }
+}
+
+@media (max-width: 400px) {
+  .obese {
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #bmi-calc {
+    max-width: 1140px;
+  }
+  #container-result {
+    max-width: 1140px;
+  }
+}
+
+@media (max-width: 374px) {
+  .overweight {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 1245px) {
+  #bmi-calc {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .kiri {
+    order: 2; /* Menentukan urutan tampilan elemen kiri */
+    width: 100%;
+  }
+
+  .container {
+    order: 1; /* Menentukan urutan tampilan elemen container */
+  }
+}

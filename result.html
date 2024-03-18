@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <title>BMI Calculator - Check Your Body Mess Index</title>
+    <meta
+      property="og:title"
+      content="BMI Calculator - Check Your Body Mess Index" />
+    <meta
+      property="og:description"
+      content="Explore your health journey with our BMI Calculator - Check Your Body Mass Index. Understanding your Body Mass Index (BMI) is a crucial step towards a healthier lifestyle. Our user-friendly BMI Calculator empowers you to effortlessly determine your BMI by entering your weight and height. Whether you're embarking on a fitness journey, monitoring your health, or setting wellness goals, our BMI Calculator provides valuable insights into your body composition. Take charge of your well-being today and discover the key to a healthier you with our BMI Calculator. Your path to a balanced and informed lifestyle begins here." />
+    <meta property="og:site_name" content="White Prince Villa" />
+    <meta
+      property="og:image"
+      content="https://drive.google.com/file/d/1oWF1zdNIzXrqAHcxZRX77RpcTg0-q_Cl/view?usp=sharing" />
+    <meta name="author" content="Agalia Gi" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="asset/logo-bmi-index.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  </head>
+  <body>
+    <section id="container-result">
+      <div class="result">
+        <h1>Your BMI is</h1>
+        <div class="result-img">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4349/4349072.png"
+            alt=""
+            width="25%" />
+        </div>
+
+        <div id="result">00.00</div>
+        <p id="comment" class="comment"></p>
+      </div>
+
+      <div class="range-container">
+        <div class="range underweight">
+          <h5>Underweight</h5>
+          <small>Below 18.5</small>
+        </div>
+        <div class="range healthy">
+          <h5>Healthy</h5>
+          <small>18.5 - 24.9</small>
+        </div>
+        <div class="range overweight">
+          <h5>Overweight</h5>
+          <small>25 - 29.9</small>
+        </div>
+        <div class="range obese">
+          <h5>Obese</h5>
+          <small>30 and Above</small>
+        </div>
+      </div>
+      <div class="ulang">
+        <a href="index.html" id="recheck-link"
+          ><i class="fa-solid fa-rotate-right"></i> Re-check</a
+        >
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+      // Extract BMI and category from the URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const bmi = urlParams.get("bmi");
+      const bmiCategory = getBMICategory(bmi);
+
+      // Check if bmi and category are defined before accessing their properties
+      if (bmi !== null && bmiCategory !== null) {
+        // Display the BMI result
+        document.getElementById("result").innerHTML = `${parseFloat(
+          bmi
+        ).toFixed(2)}`;
+
+        // Display the comment
+        document.getElementById(
+          "comment"
+        ).innerHTML = `You are <span id="comment">${bmiCategory.category}</span>`;
+        document.getElementByClass(
+          "comment"
+        ).innerHTML = `Category: <span class="category">${bmiCategory.comment}</span>`;
+      } else {
+        // Handle case when bmi or category is not defined
+        document.getElementById("result").innerHTML = "Invalid BMI result.";
+      }
+    </script>
+  </body>
+</html>

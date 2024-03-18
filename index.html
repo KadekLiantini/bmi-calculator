@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <title>BMI Calculator - Check Your Body Mess Index</title>
+    <meta
+      property="og:title"
+      content="BMI Calculator - Check Your Body Mess Index" />
+    <meta
+      property="og:description"
+      content="Explore your health journey with our BMI Calculator - Check Your Body Mass Index. Understanding your Body Mass Index (BMI) is a crucial step towards a healthier lifestyle. Our user-friendly BMI Calculator empowers you to effortlessly determine your BMI by entering your weight and height. Whether you're embarking on a fitness journey, monitoring your health, or setting wellness goals, our BMI Calculator provides valuable insights into your body composition. Take charge of your well-being today and discover the key to a healthier you with our BMI Calculator. Your path to a balanced and informed lifestyle begins here." />
+    <meta property="og:site_name" content="BMI Calculator" />
+    <meta name="author" content="Agalia Gi" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="asset/logo-bmi-index.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  </head>
+  <body>
+    <div class="title">
+      <h1>BMI Calculator</h1>
+    </div>
+    <div class="hero">
+      <!-- <img src="asset/Eating disorder-rafiki.svg" alt="" width="40%" /> -->
+      <img src="asset/Indoor bike-bro.svg" alt="" width="50%" />
+    </div>
+    <section id="bmi">
+      <div id="bmi-calc">
+        <!-- button dark mode -->
+        <div class="kiri">
+          <h1>What is BMI?</h1>
+          <p>
+            BMI (Body Mass Index) is a measurement used to assess whether
+            someone has a healthy weight based on their height and weight. It is
+            a common indicator used by medical professionals to assess the
+            health risks associated with someone's weight.
+          </p>
+          <br />
+
+          <h1>What is a BMI Calculator?</h1>
+          <p>
+            BMI calculator is a tool designed to determine whether your weight
+            falls within the ideal category or not. It can be utilized by
+            individuals aged 20 and above. However, it's essential to note that
+            this BMI calculator cannot be applied to pregnant women and children
+            due to differing BMI standards.
+          </p>
+          <br />
+
+          <h2>Things to pay attention to in the BMI Calculator:</h2>
+          <div class="category-list">
+            <ul>
+              <li>The Normal BMI ranges between 18,5 and 24,9</li>
+              <li>If your BMI exceeds 25 it indicates excess weight</li>
+              <li>
+                Conversely, if your BMI is below 17 it signifies low body weight
+              </li>
+              <li>
+                When your BMI reaches or exceeds 30, it's advisable to take
+                preventive measures to avoid illness
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="box">
+            <div class="mini-title">
+              <h1>Check Your Body Mess index</h1>
+              <br />
+              <div class="btn-dark">
+                <input type="checkbox" class="checkbox" id="chk" />
+                <label class="label" for="chk">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+                  <div class="ball"></div>
+                </label>
+              </div>
+            </div>
+            <form id="bmiForm" class="bmi-form">
+              <div class="input">
+                <label for="age">Age</label>
+                <input
+                  type="number"
+                  id="age"
+                  class="form-input"
+                  autocomplete="off"
+                  required />
+              </div>
+
+              <div class="gender">
+                <label class="container"
+                  ><input type="radio" name="gender" value="male" id="f" />
+                  <p class="text">Female</p>
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="container"
+                  ><input type="radio" name="gender" value="male" id="m" />
+                  <p class="text">Male</p>
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+
+              <div class="containerHW">
+                <div class="inputH">
+                  <label for="height" class="form-label">Height(cm)</label>
+                  <input
+                    type="number"
+                    id="height"
+                    class="form-input"
+                    required />
+                </div>
+
+                <div class="inputW">
+                  <label for="weight" class="form-label">Weight(kg)</label>
+                  <input
+                    type="number"
+                    id="weight"
+                    class="form-input"
+                    required />
+                </div>
+              </div>
+
+              <button type="button" onclick="calculateBMI()" class="calculate">
+                Calculate BMI
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
